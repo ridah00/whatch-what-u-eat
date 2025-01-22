@@ -42,7 +42,7 @@ document.querySelector("#scan_button").addEventListener("click", function () {
               son.play().then(() => {
                 setTimeout(() => {
                   document.getElementById("search_button").click();
-                }, "1000");
+                }, "800");
               });
             }
             if (err && !(err instanceof ZXing.NotFoundException)) {
