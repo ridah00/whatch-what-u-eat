@@ -37,7 +37,7 @@ document.querySelector("#scan_button").addEventListener("click", function () {
               document.getElementById("result").textContent = result.text;
               document.querySelector("#search_content").value = result.text;
               const son = new Audio();
-              son.src = "./bip_sound.mp3";
+              son.src = "/whatch-what-u-eat/bip_sound.mp3";
               son.play().then(() => {
                 setTimeout(() => {
                   document.getElementById("search_button").click();
