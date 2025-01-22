@@ -1,5 +1,5 @@
 let item_code = "";
-let bipped 
+let bipped;
 document.querySelector("#scan_button").addEventListener("click", function () {
   let selectedDeviceId;
   // document.querySelector("#video_container").classList.remove('visually-hidden')
@@ -33,20 +33,16 @@ document.querySelector("#scan_button").addEventListener("click", function () {
           "video",
           (result, err) => {
             if (result) {
-              
               console.log(result);
               document.getElementById("result").textContent = result.text;
-                document.querySelector("#search_content").value = result.text;
-                
+              document.querySelector("#search_content").value = result.text;
               const son = new Audio();
               son.src = "../../bip_sound.mp3";
               son.play().then(() => {
                 setTimeout(() => {
-                document.getElementById("search_button").click()
-              }, "1000");
-                
-              })
-              
+                  document.getElementById("search_button").click();
+                }, "1000");
+              });
             }
             if (err && !(err instanceof ZXing.NotFoundException)) {
               console.error(err);
@@ -70,19 +66,13 @@ document.querySelector("#scan_button").addEventListener("click", function () {
     });
 });
 
-
-
-
 let urlParams = new URLSearchParams(window.location.search);
 item_code = urlParams.get("codabar");
 console.log(item_code);
 
-
 if (item_code == null || item_code == "") {
   item_code = `5997523313111`;
 }
-
-
 
 fetch(`https://world.openfoodfacts.org/api/v3/product/${item_code}`)
   .then((response) => response.json())
@@ -97,7 +87,6 @@ fetch(`https://world.openfoodfacts.org/api/v3/product/${item_code}`)
         "#content"
       ).innerHTML = `product " item_code " not found`;
     }
-   
 
     document.querySelector("#content").innerHTML += `
     <img class="col-sm-2 px-5" src="${data.product.selected_images.front.display.fr}">
