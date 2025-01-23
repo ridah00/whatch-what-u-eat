@@ -39,10 +39,11 @@ document.querySelector("#scan_button").addEventListener("click", function () {
               document.querySelector("#search_content").value = result.text;
               const son = new Audio();
               son.src = "./bip_sound.mp3";
+            
               son.play().then(() => {
                 setTimeout(() => {
                   document.getElementById("search_button").click();
-                }, "1000");
+                }, "800");
               });
             }
             if (err && !(err instanceof ZXing.NotFoundException)) {
