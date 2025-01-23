@@ -16,52 +16,48 @@
 </head>
 
 <body>
-    <p class="title">
-        <a class="button-small button-outline" href="index.html">HOME 🏡</a>
-    </p>
-    <div class="navabar justify-content-center">
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" id="search_content" name="codabar"
+    
+    <div class="navabar bg-success-subtle">
+        
+        <form class="row gap-3  justify-content-center align-items-center " role="search">
+            <p class="d-flex col-sm-1 m-0 text-center">
+                <a class="button-small button-outline " href="index.html"><img class="rounded-5" src="./assets/img/logo.jpg" alt="website logo"></a>
+            </p>
+            <div class="col-sm-3 m-0 ">
+                <input class="form-control m-0 fs-4 border border-success " type="search" id="search_content" name="codabar"
                 placeholder="Code à bar ex : 5997523313111" aria-label="Search">
-            <button class="btn btn-outline-success" id="search_button" type="submit">Chercher</button>
-            <button class="btn btn-outline-success" id="scan_button" type="button">Scanner</button>
-
+            </div>
+            <button class="btn btn-outline-success col-sm-1 m-0 fs-5" id="search_button" type="submit">Chercher</button>
+            <button class="btn btn-outline-success col-sm-1 m-0 fs-5 " id="scan_button" type="button">Scanner</button>
         </form>
     </div>
     
-    <div class="text-center" style="display:none" id="video_container">
-        <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
-    </div>
-    <main class="wrapper" style="padding-top:2em">
-        <section class="container" id="demo-content">
-            <div id="button_container" class="" style="display:none">
-                <a class="button" id="startButton">Start</a>
-                <a class="button" id="resetButton">Reset</a>
-            </div>
-
+    <main class=" row m-0" >
+        
+        <div class="col-6 text-center" style="display:none" id="video_container">
+            <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
+        </div>
+        <section class=" col p-0" id="demo-content">
             <div id="sourceSelectPanel" style="display:none">
-                <label for="sourceSelect">Change video source:</label>
+                <button type="button" style="display:none" id="close_button" class="btn btn-danger">Fermer</button>
+                <label for="sourceSelect">Changer la caméra</label>
                 <select id="sourceSelect" style="max-width:400px">
                 </select>
             </div>
+            <div id="button_container" class="" style="display:none">
+                <a class="button bg-secondary-subtle text-dark" id="startButton">Scanner</a>
+                <a class="button bg-secondary-subtle text-dark" id="resetButton">Réinitialiser</a>
+            </div>
+
+            
             <label class="title visually-hidden">Result:</label>
             <pre class="title visually-hidden"><code id="result"></code></pre>
         </section>
     </main>
 
-    <div class="row justify-content-center m-2" id="content">
+    <div class="row justify-content-center m-0" id="content">
 
     </div>
-    
-
-
-
-
-
-
-
-
-
     <script type="text/javascript" src="https://unpkg.com/@zxing/library@latest/umd/index.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="./script.js"></script>
